@@ -9,6 +9,10 @@ public class ValidateSaIdTest {
     void validIdNumbersShouldReturnTrue() {
 
         assertTrue(ValidateSaId.isIdNumberValid("8001015009087"));
+        // Valid male born 15 Mar 2005
+        assertTrue(ValidateSaId.isIdNumberValid("0503155009083"));
+        // Valid female born 1 Feb 1990
+        assertTrue(ValidateSaId.isIdNumberValid("9002014000088"));
 
     }
 
@@ -69,8 +73,8 @@ public class ValidateSaIdTest {
 
     @Test
     void invalidChecksumShouldReturnFalse() {
-        assertFalse(ValidateSaId.isIdNumberValid("2001014800087")); // Changed last digit
-        assertFalse(ValidateSaId.isIdNumberValid("2909035800084")); // Changed last digit
+        assertFalse(ValidateSaId.isIdNumberValid("2001014800087"));
+        assertFalse(ValidateSaId.isIdNumberValid("2909035800084"));
     }
 
 
