@@ -45,6 +45,12 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2001014800286")); // Citizenship code 2
     }
 
+    @Test
+    void invalidChecksumShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("2001014800087")); // Changed last digit
+        assertFalse(ValidateSaId.isIdNumberValid("2909035800084")); // Changed last digit
+    }
+
 
 
 }
