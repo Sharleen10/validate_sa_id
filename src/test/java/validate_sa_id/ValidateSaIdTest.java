@@ -6,6 +6,28 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ValidateSaIdTest {
 
     @Test
+    void validIdNumbersShouldReturnTrue() {
+
+        assertTrue(ValidateSaId.isIdNumberValid("8001015009087"));
+
+    }
+
+    @Test
+    void invalidIdNumbersShouldReturnFalse() {
+        // Invalid length
+        assertFalse(ValidateSaId.isIdNumberValid("800101500908"));
+
+        // Invalid month
+        assertFalse(ValidateSaId.isIdNumberValid("8013015009087"));
+
+        // Invalid day
+        assertFalse(ValidateSaId.isIdNumberValid("8001325009087"));
+
+        // Invalid checksum
+        assertFalse(ValidateSaId.isIdNumberValid("8001015009088"));
+    }
+
+    @Test
     void idNumberTooShortShouldReturnFalse() {
         assertFalse(ValidateSaId.isIdNumberValid("20010148000"));
     }
@@ -32,7 +54,7 @@ public class ValidateSaIdTest {
     }
     @Test
     void validDaysInFebruaryShouldBeCheckedCorrectly() {
-        assertTrue(ValidateSaId.isIdNumberValid("1998294800082")); // Day 29 in Feb of leap year
+        assertTrue(ValidateSaId.isIdNumberValid("9602295009088")); // Day 29 in Feb of leap year (1996)
         assertFalse(ValidateSaId.isIdNumberValid("2101294800089")); // Day 29 in Feb of non-leap year
     }
     @Test
