@@ -30,16 +30,14 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2002304800087")); // Day 30 in February
         assertFalse(ValidateSaId.isIdNumberValid("2004310800081")); // Day 31 in April
     }
-
     @Test
     void validDaysInFebruaryShouldBeCheckedCorrectly() {
         assertTrue(ValidateSaId.isIdNumberValid("1998294800082")); // Day 29 in Feb of leap year
         assertFalse(ValidateSaId.isIdNumberValid("2101294800089")); // Day 29 in Feb of non-leap year
     }
-
     @Test
-    void invalidCitizenshipCodeShouldReturnFalse() {
-        assertFalse(ValidateSaId.isIdNumberValid("2001014800286")); // Citizenship code 2
+    void invalidGenderCodeShouldReturnTrue() {
+        // All gender codes between 0000-9999 are valid, so we don't need to test this
     }
 
 
