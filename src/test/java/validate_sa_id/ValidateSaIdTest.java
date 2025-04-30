@@ -13,6 +13,10 @@ public class ValidateSaIdTest {
     void idNumberTooLongShouldReturnFalse() {
         assertFalse(ValidateSaId.isIdNumberValid("20010148000861"));
     }
+    @Test
+    void idNumberWithNonNumericCharactersShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("20010A4800086"));
+    }
 
 
 
