@@ -37,10 +37,7 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2101294800089")); // Day 29 in Feb of non-leap year
     }
 
-    @Test
-    void invalidGenderCodeShouldReturnTrue() {
-        // All gender codes between 0000-9999 are valid, so we don't need to test this
-    }
+
 
 
 
