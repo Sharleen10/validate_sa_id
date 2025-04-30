@@ -24,6 +24,13 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2000014800087")); // Month 00
     }
 
+    @Test
+    void invalidDayShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("2001324800088")); // Day 32 in January
+        assertFalse(ValidateSaId.isIdNumberValid("2002304800087")); // Day 30 in February
+        assertFalse(ValidateSaId.isIdNumberValid("2004310800081")); // Day 31 in April
+    }
+
 
 
 }
