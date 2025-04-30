@@ -37,7 +37,10 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2101294800089")); // Day 29 in Feb of non-leap year
     }
 
-
+    @Test
+    void invalidCitizenshipCodeShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("2001014800286")); // Citizenship code 2
+    }
 
 
 
