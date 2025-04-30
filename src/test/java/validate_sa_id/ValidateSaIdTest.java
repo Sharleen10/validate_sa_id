@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ValidateSaIdTest {
 
+    @Test
+    void idNumberTooShortShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("20010148000"));
+    }
+
 
 
 }
