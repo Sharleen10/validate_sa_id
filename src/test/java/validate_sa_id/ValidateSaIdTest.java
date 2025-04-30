@@ -31,6 +31,13 @@ public class ValidateSaIdTest {
         assertFalse(ValidateSaId.isIdNumberValid("2004310800081")); // Day 31 in April
     }
 
+    @Test
+    void validDaysInFebruaryShouldBeCheckedCorrectly() {
+        assertTrue(ValidateSaId.isIdNumberValid("1998294800082")); // Day 29 in Feb of leap year
+        assertFalse(ValidateSaId.isIdNumberValid("2101294800089")); // Day 29 in Feb of non-leap year
+    }
+
+
 
 
 }
