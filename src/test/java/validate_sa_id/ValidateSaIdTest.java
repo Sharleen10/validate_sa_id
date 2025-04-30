@@ -40,6 +40,11 @@ public class ValidateSaIdTest {
         // All gender codes between 0000-9999 are valid, so we don't need to test this
     }
 
+    @Test
+    void invalidCitizenshipCodeShouldReturnFalse() {
+        assertFalse(ValidateSaId.isIdNumberValid("2001014800286")); // Citizenship code 2
+    }
+
 
 
 }
